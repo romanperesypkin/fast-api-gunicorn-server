@@ -1,0 +1,14 @@
+---
+version: '3'
+services:
+  server:
+    image: ${IMAGE}:${VERSION}
+    build:
+      context: .
+      args:
+        PYPI_USERNAME: ${PYPI_USERNAME}
+        PYPI_PASSWORD: ${PYPI_PASSWORD}
+    env_file:
+      - .env
+    ports:
+      - "80:80"
